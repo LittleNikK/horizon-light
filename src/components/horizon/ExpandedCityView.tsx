@@ -74,7 +74,7 @@ export function ExpandedCityView({
 
         <div className="flex flex-1 flex-col items-center justify-center">
           <p
-            className={`font-mono text-[18vw] leading-none tabular-nums tracking-tighter sm:text-[13vw] ${ink}`}
+            className={`font-mono text-[15vw] leading-none tabular-nums tracking-tighter sm:text-[13vw] ${ink}`}
           >
             {formatLocalTime(city.tz, now, true)}
           </p>

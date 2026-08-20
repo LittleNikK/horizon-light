@@ -60,21 +60,23 @@ export function WorldClockGrid() {
   return (
     <LayoutGroup>
       <header className="sticky top-0 z-30 border-b border-[#2C2C36] bg-[#14141A]/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-5 py-3.5 sm:px-8">
-          <h1 className="font-display text-lg font-medium tracking-tight text-[#F2F0EC]">
-            Horizon
-          </h1>
-          <p className="hidden font-mono text-[11px] tabular-nums text-[#8E8C97] sm:block">
-            {mounted ? `${formatUTC(now)} UTC` : "--:--:-- UTC"}
-          </p>
-          <div className="ml-auto">
+        <div className="mx-auto flex flex-col gap-3 px-5 py-3 sm:flex-row sm:items-center sm:gap-4 sm:px-8 sm:py-3.5">
+          <div className="flex items-center justify-between sm:justify-start sm:gap-4">
+            <h1 className="font-display text-lg font-medium tracking-tight text-[#F2F0EC]">
+              Horizon
+            </h1>
+            <p className="font-mono text-[11px] tabular-nums text-[#8E8C97]">
+              {mounted ? `${formatUTC(now)} UTC` : "--:--:-- UTC"}
+            </p>
+          </div>
+          <div className="w-full flex justify-center sm:ml-auto sm:w-auto sm:justify-end">
             <AddCitySearch selectedIds={ids} onAdd={(city) => persist([...ids, city.id])} />
           </div>
         </div>
       </header>
 
       <main className="mx-auto max-w-[1400px] px-5 py-6 sm:px-8 sm:py-10">
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:gap-4 md:grid-cols-3 xl:grid-cols-4">
           <AnimatePresence mode="popLayout">
             {(mounted ? cities : []).map((city) => (
               <CityPanel

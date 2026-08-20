@@ -61,8 +61,7 @@ export function CityPanel({ city, now, onExpand, onRemove }: Props) {
         type="button"
         onClick={onExpand}
         aria-label={`Expand ${city.name}, local time ${formatLocalTime(city.tz, now)}`}
-        className="relative block w-full overflow-hidden rounded-2xl text-left ring-offset-2 ring-offset-[#14141A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8B85C]"
-        style={{ aspectRatio: "3 / 4" }}
+        className="relative block w-full aspect-[4/3] min-[480px]:aspect-[3/4] overflow-hidden rounded-2xl text-left ring-offset-2 ring-offset-[#14141A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8B85C]"
       >
         <motion.div
           className="absolute inset-0"
